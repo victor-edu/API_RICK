@@ -1,0 +1,15 @@
+const express = require('express');
+const { graphqlHTTP } = require('express-graphql');
+const schema = require('./schema');
+
+const app = express();
+
+app.use('/graphql', graphqlHTTP({
+  schema,
+  graphiql: true, // Ativa a interface GrapqiQL para testar consultas
+}));
+
+const PORT = process.env.PORT || 3333;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}/graphql`);
+});
