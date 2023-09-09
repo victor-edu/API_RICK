@@ -6,7 +6,7 @@ const app = express();
 
 app.use('/graphql', graphqlHTTP({
   schema,
-  graphiql: true, // Ativa a interface GrapqiQL para testar consultas
+  graphiql: true, 
 }));
 
 const PORT = process.env.PORT || 3333;
